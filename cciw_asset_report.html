@@ -253,143 +253,7 @@
               >
                 <span>Cost Drivers</span>
               </h4>
-              <div
-                id="costDriversChart"
-                style="width: 100%; height: 500px"
-              ></div>
-            </div>
-            <script>
-              var chartDom = document.getElementById("costDriversChart");
-              var myChart = echarts.init(chartDom);
-              var option;
-              option = {
-                legend: {
-                  orient: "horizontal",
-                  top: "top",
-                  data: [
-                    "Interior Repair",
-                    "Exterior Repair",
-                    "Mechanical Repair",
-                    "Electrical Repair",
-                    "Elevator Repair",
-                    "Stairs Repair",
-                    "Structural",
-                    "Regional Utility",
-                    "Inspection",
-                    "Engineering + Permit",
-                    "Financing",
-                    "Contractor Mobilization",
-                    "Collapse",
-                  ],
-                },
-                tooltip: {
-                  trigger: "item",
-                  formatter: "{b}: {d}%",
-                },
-                dataset: {
-                  source: [
-                    ["Category", "Flood", "Earthquake"],
-                    ["Interior Repair", 0, 0.0008],
-                    ["Exterior Repair", 0, 0],
-                    ["Mechanical Repair", 0.2534, 0.0284],
-                    ["Electrical Repair", 0, 0],
-                    ["Elevator Repair", 0, 0.0688],
-                    ["Stairs Repair", 0, 0],
-                    ["Structural", 0, 0.0038],
-                    ["Regional Utility", 0.0685, 0.0457],
-                    ["Inspection", 0, 0.0211],
-                    ["Engineering + Permit", 0, 0.1663],
-                    ["Financing", 0, 0.0003],
-                    ["Contractor Mobilization", 0.678, 0.4392],
-                    ["Collapse", 0, 0.2255],
-                  ],
-                },
-                color: [
-                  "#FF0000",
-                  "#FFFF00",
-                  "#0000FF",
-                  "#FF4500",
-                  "#32CD32",
-                  "#FFD700",
-                  "#1E90FF",
-                  "#FF69B4",
-                  "#8A2BE2",
-                  "#00CED1",
-                  "#FF6347",
-                  "#4682B4",
-                  "#D2691E",
-                ], // Red, Yellow, Blue, and other colors
-                series: [
-                  {
-                    type: "pie",
-                    radius: "45%",
-                    center: ["25%", "50%"],
-                    encode: {
-                      itemName: "Category",
-                      value: "Earthquake",
-                    },
-                    label: {
-                      show: true,
-                    },
-                    emphasis: {
-                      itemStyle: {
-                        shadowBlur: 10,
-                        shadowOffsetX: 0,
-                        shadowColor: "rgba(0, 0, 0, 0.5)",
-                      },
-                    },
-                    selectedMode: "single",
-                  },
-                  {
-                    type: "pie",
-                    radius: "45%",
-                    center: ["75%", "50%"],
-                    encode: {
-                      itemName: "Category",
-                      value: "Flood",
-                    },
-                    label: {
-                      show: true,
-                    },
-                    emphasis: {
-                      itemStyle: {
-                        shadowBlur: 10,
-                        shadowOffsetX: 0,
-                        shadowColor: "rgba(0, 0, 0, 0.5)",
-                      },
-                    },
-                    selectedMode: "single",
-                  },
-                ],
-                title: [
-                  {
-                    text: "Earthquake",
-                    left: "25%",
-                    top: "80%",
-                    textAlign: "center",
-                  },
-                  {
-                    text: "Flood",
-                    left: "75%",
-                    top: "80%",
-                    textAlign: "center",
-                  },
-                ],
-              };
 
-              option && myChart.setOption(option);
-            </script>
-            <div class="uk-margin-bottom asset" data-building="Storage">
-              <h4
-                class="uk-heading-line uk-text-bold"
-                style="
-                  font-family: 'Raleway', sans-serif;
-                  font-weight: 600;
-                  color: #da3b32;
-                "
-              >
-                <span>Recovery Bottleneck</span>
-              </h4>
               <div
                 id="recoveryBottleneckChart"
                 style="width: 100%; height: 500px"
@@ -535,6 +399,145 @@
 
                 option && myChart.setOption(option);
               </script>
+
+              <div class="uk-margin-bottom asset" data-building="Storage">
+                <h4
+                  class="uk-heading-line uk-text-bold"
+                  style="
+                    font-family: 'Raleway', sans-serif;
+                    font-weight: 600;
+                    color: #da3b32;
+                  "
+                >
+                  <span>Recovery Bottleneck</span>
+                </h4>
+
+                <div
+                  id="costDriversChart"
+                  style="width: 100%; height: 500px"
+                ></div>
+              </div>
+              <script>
+                var chartDom = document.getElementById("costDriversChart");
+                var myChart = echarts.init(chartDom);
+                var option;
+                option = {
+                  legend: {
+                    orient: "horizontal",
+                    top: "top",
+                    data: [
+                      "Interior Repair",
+                      "Exterior Repair",
+                      "Mechanical Repair",
+                      "Electrical Repair",
+                      "Elevator Repair",
+                      "Stairs Repair",
+                      "Structural",
+                      "Regional Utility",
+                      "Inspection",
+                      "Engineering + Permit",
+                      "Financing",
+                      "Contractor Mobilization",
+                      "Collapse",
+                    ],
+                  },
+                  tooltip: {
+                    trigger: "item",
+                    formatter: "{b}: {d}%",
+                  },
+                  dataset: {
+                    source: [
+                      ["Category", "Flood", "Earthquake"],
+                      ["Interior Repair", 0, 0.0008],
+                      ["Exterior Repair", 0, 0],
+                      ["Mechanical Repair", 0.2534, 0.0284],
+                      ["Electrical Repair", 0, 0],
+                      ["Elevator Repair", 0, 0.0688],
+                      ["Stairs Repair", 0, 0],
+                      ["Structural", 0, 0.0038],
+                      ["Regional Utility", 0.0685, 0.0457],
+                      ["Inspection", 0, 0.0211],
+                      ["Engineering + Permit", 0, 0.1663],
+                      ["Financing", 0, 0.0003],
+                      ["Contractor Mobilization", 0.678, 0.4392],
+                      ["Collapse", 0, 0.2255],
+                    ],
+                  },
+                  color: [
+                    "#FF0000",
+                    "#FFFF00",
+                    "#0000FF",
+                    "#FF4500",
+                    "#32CD32",
+                    "#FFD700",
+                    "#1E90FF",
+                    "#FF69B4",
+                    "#8A2BE2",
+                    "#00CED1",
+                    "#FF6347",
+                    "#4682B4",
+                    "#D2691E",
+                  ], // Red, Yellow, Blue, and other colors
+                  series: [
+                    {
+                      type: "pie",
+                      radius: "45%",
+                      center: ["25%", "50%"],
+                      encode: {
+                        itemName: "Category",
+                        value: "Earthquake",
+                      },
+                      label: {
+                        show: true,
+                      },
+                      emphasis: {
+                        itemStyle: {
+                          shadowBlur: 10,
+                          shadowOffsetX: 0,
+                          shadowColor: "rgba(0, 0, 0, 0.5)",
+                        },
+                      },
+                      selectedMode: "single",
+                    },
+                    {
+                      type: "pie",
+                      radius: "45%",
+                      center: ["75%", "50%"],
+                      encode: {
+                        itemName: "Category",
+                        value: "Flood",
+                      },
+                      label: {
+                        show: true,
+                      },
+                      emphasis: {
+                        itemStyle: {
+                          shadowBlur: 10,
+                          shadowOffsetX: 0,
+                          shadowColor: "rgba(0, 0, 0, 0.5)",
+                        },
+                      },
+                      selectedMode: "single",
+                    },
+                  ],
+                  title: [
+                    {
+                      text: "Earthquake",
+                      left: "25%",
+                      top: "80%",
+                      textAlign: "center",
+                    },
+                    {
+                      text: "Flood",
+                      left: "75%",
+                      top: "80%",
+                      textAlign: "center",
+                    },
+                  ],
+                };
+
+                option && myChart.setOption(option);
+              </script>
             </div>
           </div>
           <div class="uk-width-1-3@m">
@@ -595,6 +598,94 @@
                   </tr>
                 </tbody>
               </table>
+            </div>
+            <div class="uk-margin-small-top">
+              <h4
+                style="
+                  font-family: 'Raleway', sans-serif;
+                  font-weight: 600;
+                  color: #da3b32;
+                  margin-top: 20px;
+                "
+              >
+                Loss Excedence
+              </h4>
+              <div
+                class="uk-container"
+                id="probabilityExcedenceChart"
+                style="width: 100%; height: 20rem; padding: 5px"
+              ></div>
+              <script>
+                var chartDom = document.getElementById(
+                  "probabilityExcedenceChart"
+                );
+                var myChart = echarts.init(chartDom);
+                var option;
+
+                option = {
+                  tooltip: {
+                    trigger: "axis",
+                    formatter: "{c} : ${b}",
+                    textStyle: {
+                      fontWeight: 700, // Make the title bold
+                      color: "#0b154b", // Change the color of the text
+                    },
+                  },
+                  xAxis: {
+                    type: "category",
+                    name: "Loss ($)",
+                    data: [
+                      0.4683 * 1e6,
+                      0.6292 * 1e6,
+                      0.8189 * 1e6,
+                      1.2369 * 1e6,
+                      2.5133 * 1e6,
+                      5.3147 * 1e6,
+                      32.1787 * 1e6,
+                    ],
+                    nameLocation: "middle",
+                    nameGap: 20,
+                    nameTextStyle: {
+                      color: "#0b154b",
+                      fontSize: 12,
+                      fontWeight: 500,
+                    },
+                    axisLabel: {
+                      fontSize: 10, // Decrease the font size of the y-axis values
+                      color: "#000000", // Optional: Set the color of the y-axis values
+                    },
+                  },
+                  yAxis: {
+                    type: "value",
+                    name: "              Ann. Excedence Probability",
+                    nameLocation: "end",
+                    nameGap: 20,
+                    nameTextStyle: {
+                      color: "#0b154b",
+                      fontSize: 8,
+                      fontWeight: 500,
+                    },
+                    axisLabel: {
+                      fontSize: 10, // Decrease the font size of the y-axis values
+                      color: "#000000", // Optional: Set the color of the y-axis values
+                    },
+                  },
+                  series: [
+                    {
+                      data: [0.02, 0.01, 0.0045, 0.0021, 0.001, 0.0004, 0.0002],
+                      type: "line",
+                      smooth: true,
+                      lineStyle: {
+                        color: "#FF0000",
+                      },
+                      itemStyle: {
+                        color: "#FF0000",
+                      },
+                    },
+                  ],
+                };
+                option && myChart.setOption(option);
+              </script>
             </div>
             <!-- </div> -->
           </div>
