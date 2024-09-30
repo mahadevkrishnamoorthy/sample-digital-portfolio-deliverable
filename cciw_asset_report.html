@@ -228,10 +228,15 @@
                   font-family: 'Raleway', sans-serif;
                   font-weight: 600;
                   color: #da3b32;
+                  display: inline-block;
                 "
               >
                 Risk Drivers
               </h1>
+              <div style="color: #0c1448;">
+                <span uk-icon="info" style="margin-right: 5px;"></span>
+                <span class="">Risk drivers are factors that contribute to the level of risk in a situation.</span>
+              </div>
               <p class="subtitle-text">
                 Flood damages interior partitions and flooring, which can be
                 mitigated by
@@ -253,10 +258,14 @@
               >
                 <span>Cost Drivers</span>
               </h4>
-
+              <div style="color: #0c1448;">
+                <span uk-icon="info" style="margin-right: 5px;"></span>
+                <span>Equivalent annual average loss contribution by component type</span>
+              </div>
               <div
                 id="recoveryBottleneckChart"
                 style="width: 100%; height: 500px"
+                class="uk-margin-small-top"
               ></div>
               <script>
                 var chartDom = document.getElementById(
@@ -299,6 +308,12 @@
                 });
 
                 option = {
+                  textStyle: {
+                    fontFamily: "Raleway",
+                    fontSize: 12,
+                    fontStyle: "normal",
+                    fontWeight: "normal",
+                  },
                   legend: {
                     orient: "horizontal",
                     top: "top",
@@ -411,10 +426,14 @@
                 >
                   <span>Recovery Bottleneck</span>
                 </h4>
-
+                <div style="color: #0c1448;">
+                  <span uk-icon="info" style="margin-right: 5px;"></span>
+                  <span class="">Equivalent annual building downtime contribution by task</span>
+                </div>
                 <div
                   id="costDriversChart"
                   style="width: 100%; height: 500px"
+                  class="uk-margin-small-top"
                 ></div>
               </div>
               <script>
@@ -422,6 +441,12 @@
                 var myChart = echarts.init(chartDom);
                 var option;
                 option = {
+                  textStyle: {
+                    fontFamily: "Raleway",
+                    fontSize: 12,
+                    fontStyle: "normal",
+                    fontWeight: "normal",
+                  },
                   legend: {
                     orient: "horizontal",
                     top: "top",
@@ -610,6 +635,10 @@
               >
                 Loss Excedence
               </h4>
+              <div style="color: #0c1448;">
+                <span uk-icon="info" style="margin-right: 5px;"></span>
+                <span class="">Probability of extreme losses for verifying risk appetite</span>
+              </div>
               <div
                 class="uk-container"
                 id="probabilityExcedenceChart"
@@ -623,6 +652,12 @@
                 var option;
 
                 option = {
+                  textStyle: {
+                    fontFamily: "Raleway",
+                    fontSize: 12,
+                    fontStyle: "normal",
+                    fontWeight: "normal",
+                  },
                   tooltip: {
                     trigger: "axis",
                     formatter: "{c} : ${b}",
@@ -701,6 +736,10 @@
           >
             Building Recovery
           </h1>
+          <div style="color: #0c1448;">
+            <span uk-icon="info" style="margin-right: 5px;"></span>
+            <span class="">Building recovery times under events of different intensity</span>
+          </div>
           <p class="subtitle-text">
             For both flood and earthquake, post-event mobilization of
             contractors for repairing damage is a major bottlenect to building
@@ -731,6 +770,12 @@
                   document.getElementById("chartDowntimeEarthquke")
                 );
                 var option = {
+                  textStyle: {
+                    fontFamily: "Raleway",
+                    fontSize: 12,
+                    fontStyle: "normal",
+                    fontWeight: "normal",
+                  },
                   tooltip: {
                     trigger: "axis",
                     axisPointer: { type: "shadow" },
@@ -955,6 +1000,12 @@
                   document.getElementById("chartDowntimeFlood")
                 );
                 var option = {
+                  textStyle: {
+                    fontFamily: "Raleway",
+                    fontSize: 12,
+                    fontStyle: "normal",
+                    fontWeight: "normal",
+                  },
                   tooltip: {
                     trigger: "axis",
                     axisPointer: { type: "shadow" },
