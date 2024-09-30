@@ -264,6 +264,10 @@
               >
                 <span>Annualized Loss Breakdown</span>
               </h3>
+              <div style="color: #0c1448;">
+                <span uk-icon="info" style="margin-right: 5px;"></span>
+                <span class="">Average portfolio losses by peril</span>
+              </div>
               <div id="chartAnnLoss" style="width: 100%; height: 20rem"></div>
               <script>
                 var chart = echarts.init(
@@ -341,7 +345,7 @@
                     },
                   },
                   textStyle: {
-                    fontFamily: "Microsoft YaHei",
+                    fontFamily: "Raleway",
                     fontSize: 12,
                     fontStyle: "normal",
                     fontWeight: "normal",
@@ -825,7 +829,11 @@
           >
             <span>Asset Direct Losses</span>
           </h3>
-          <div class="uk-grid uk-grid-match" data-ukgrid>
+          <div style="color: #0c1448;">
+            <span uk-icon="info" style="margin-right: 5px;"></span>
+            <span class="">Breakdown of loss contributions by asset</span>
+          </div>
+          <div class="uk-grid uk-grid-match uk-margin-small-top" data-ukgrid>
             <div class="uk-grid-column-small uk-grid-row-large uk-width-1-2@l">
               <h4 style="font-weight: 700">
                 <img
@@ -915,7 +923,7 @@
                     },
                   },
                   textStyle: {
-                    fontFamily: "Microsoft YaHei",
+                    fontFamily: "Raleway",
                     fontSize: 12,
                     fontStyle: "normal",
                     fontWeight: "normal",
@@ -1036,6 +1044,7 @@
                         color: "#0c0c0c",
                         fontSize: 14,
                       },
+                      formatter: "{b}: ${c} USD",
                       z: 60,
                       show: true,
                       showContent: true,
@@ -1354,7 +1363,7 @@
                     },
                   },
                   textStyle: {
-                    fontFamily: "Microsoft YaHei",
+                    fontFamily: "Raleway",
                     fontSize: 12,
                     fontStyle: "normal",
                     fontWeight: "normal",
@@ -1723,6 +1732,10 @@
             >
               Key Disruption Scenario
             </h3>
+            <div style="color: #0c1448;">
+              <span uk-icon="info" style="margin-right: 5px;"></span>
+              <span class="">Average damage map of portfolio</span>
+            </div>
             <p class="uk-margin-small-top">
               The biggest cause of functional disruption is flooded roads,
               regardless of the level of property damage. In extreme scenarios,
@@ -1746,6 +1759,10 @@
             >
               Average Post Event Functional Recovery
             </h3>
+            <div style="color: #0c1448;">
+              <span uk-icon="info" style="margin-right: 5px;"></span>
+              <span class="">Average/scenario post-event recovery trajectory of functions</span>
+            </div>
             <h4 style="font-weight: 700">
               <img
                 src="https://ik.imagekit.io/vv8l41ztu/Shake.svg"
@@ -1831,7 +1848,7 @@
                   },
                 },
                 textStyle: {
-                  fontFamily: "Microsoft YaHei",
+                  fontFamily: "Raleway",
                   fontSize: 12,
                   fontStyle: "normal",
                   fontWeight: "normal",
@@ -4878,7 +4895,7 @@
                   },
                 },
                 textStyle: {
-                  fontFamily: "Microsoft YaHei",
+                  fontFamily: "Raleway",
                   fontSize: 12,
                   fontStyle: "normal",
                   fontWeight: "normal",
