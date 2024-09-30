@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
 
-    <title>Portfolio Resilience Report - Request 62 - CCIW Portfolio</title>
+    <title>Portfolio Resilience Report - Sample Report Deliverable - Multihazard Portfolio</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/uikit@3.6.22/dist/css/uikit.min.css"
@@ -188,16 +188,13 @@
         </div>
         <div>
           <div>
-            <span class="uk-text-small">Hazards Exposed</span>
+            <span class="uk-text-small">Perils Exposed</span>
             <div class="uk-margin-small-top">
               <span class="uk-badge" style="background: #0c1448; padding: 12px"
-                >Earthquake</span
+                >Pluvial</span
               >
               <span class="uk-badge" style="background: #0c1448; padding: 12px"
-                >Extreme Wind</span
-              >
-              <span class="uk-badge" style="background: #0c1448; padding: 12px"
-                >Flood</span
+                >Shaking</span
               >
             </div>
           </div>
@@ -269,6 +266,10 @@
               >
                 <span>Annualized Loss Breakdown</span>
               </h3>
+              <div style="color: #0c1448;">
+                <span uk-icon="info" style="margin-right: 5px;"></span>
+                <span class="">Average portfolio losses by peril</span>
+              </div>
               <div id="chartAnnLoss" style="width: 100%; height: 20rem"></div>
               <script>
                 var chart = echarts.init(
@@ -346,7 +347,7 @@
                     },
                   },
                   textStyle: {
-                    fontFamily: "Microsoft YaHei",
+                    fontFamily: "Raleway",
                     fontSize: 12,
                     fontStyle: "normal",
                     fontWeight: "normal",
@@ -402,15 +403,15 @@
                         },
                       },
                       z: 6,
-                      backgroundColor: "transparent",
-                      borderColor: "#ccc",
-                      borderRadius: 0,
+                      backgroundColor: "#da3b32",
+                      borderColor: "#000",
+                      borderRadius: 20,
                       borderWidth: 0,
                       padding: 5,
                       itemSize: 15,
                       itemGap: 8,
                       showTitle: true,
-                      iconStyle: { borderColor: "#666", color: "none" },
+                      iconStyle: { borderColor: "#fff", color: "none" },
                       emphasis: { iconStyle: { borderColor: "#3E98C5" } },
                       tooltip: { show: false, position: "bottom" },
                       right: null,
@@ -462,11 +463,11 @@
                   yAxis: [
                     {
                       type: "category",
-                      data: ["Shake", "Pluvial"],
+                      data: ["Shaking", "Pluvial"],
                       axisLabel: {
                         margin: 20,
                         rich: {
-                          Shake: {
+                          Shaking: {
                             height: 40,
                             align: "center",
                             fontWeight: "bold",
@@ -814,43 +815,445 @@
                 chart.setOption(option);
               </script>
             </div>
-            <div class="uk-margin-bottom asset" data-building="Storage">
-              <h3
-                class="uk-heading-line uk-text-bold"
-                style="
-                  font-family: 'Raleway', sans-serif;
-                  font-weight: 600;
-                  color: #da3b32;
-                "
-              >
-                <span>Asset Direct Losses</span>
-              </h3>
-              <div
-                id="chartAssetResults"
-                style="width: 100%; height: 20rem"
-              ></div>
-              <script>
-                var chart = echarts.init(
-                  document.getElementById("chartAssetResults")
-                );
-                var option = {
-                  darkMode: "auto",
-                  colorBy: "series",
-                  color: [
-                    "#5470c6",
-                    "#91cc75",
-                    "#fac858",
-                    "#ee6666",
-                    "#73c0de",
-                    "#3ba272",
-                    "#fc8452",
-                    "#9a60b4",
-                    "#ea7ccc",
+          </div>
+        </div>
+        <div class="uk-margin-medium-top uk-margin-bottom asset" data-building="Storage">
+          <h3
+            class="uk-heading-line uk-text-bold"
+            style="
+              font-family: 'Raleway', sans-serif;
+              font-weight: 600;
+              color: #da3b32;
+            "
+          >
+            <span>Asset Direct Losses</span>
+          </h3>
+          <div style="color: #0c1448;">
+            <span uk-icon="info" style="margin-right: 5px;"></span>
+            <span class="">Breakdown of loss contributions by asset</span>
+          </div>
+          <h4 style="font-weight: 700">
+            <img
+              src="https://ik.imagekit.io/vv8l41ztu/Pluvial.svg"
+              alt="Shaking Icon"
+              style="height: 20px; vertical-align: middle"
+            />
+            Pluvial
+          </h4>
+          <div
+            id="chartAssetResults"
+            style="width: 100%; height: 20rem"
+          ></div>
+          <script>
+            var chart = echarts.init(
+              document.getElementById("chartAssetResults")
+            );
+            var option = {
+              darkMode: "auto",
+              colorBy: "series",
+              color: [
+                "#5470c6",
+                "#91cc75",
+                "#fac858",
+                "#ee6666",
+                "#73c0de",
+                "#3ba272",
+                "#fc8452",
+                "#9a60b4",
+                "#ea7ccc",
+              ],
+              gradientColor: ["#f6efa6", "#d88273", "#bf444c"],
+              aria: {
+                decal: {
+                  decals: [
+                    {
+                      color: "rgba(0, 0, 0, 0.2)",
+                      dashArrayX: [1, 0],
+                      dashArrayY: [2, 5],
+                      symbolSize: 1,
+                      rotation: 0.5235987755982988,
+                    },
+                    {
+                      color: "rgba(0, 0, 0, 0.2)",
+                      symbol: "circle",
+                      dashArrayX: [
+                        [8, 8],
+                        [0, 8, 8, 0],
+                      ],
+                      dashArrayY: [6, 0],
+                      symbolSize: 0.8,
+                    },
+                    {
+                      color: "rgba(0, 0, 0, 0.2)",
+                      dashArrayX: [1, 0],
+                      dashArrayY: [4, 3],
+                      rotation: -0.7853981633974483,
+                    },
+                    {
+                      color: "rgba(0, 0, 0, 0.2)",
+                      dashArrayX: [
+                        [6, 6],
+                        [0, 6, 6, 0],
+                      ],
+                      dashArrayY: [6, 0],
+                    },
+                    {
+                      color: "rgba(0, 0, 0, 0.2)",
+                      dashArrayX: [
+                        [1, 0],
+                        [1, 6],
+                      ],
+                      dashArrayY: [1, 0, 6, 0],
+                      rotation: 0.7853981633974483,
+                    },
+                    {
+                      color: "rgba(0, 0, 0, 0.2)",
+                      symbol: "triangle",
+                      dashArrayX: [
+                        [9, 9],
+                        [0, 9, 9, 0],
+                      ],
+                      dashArrayY: [7, 2],
+                      symbolSize: 0.75,
+                    },
                   ],
-                  gradientColor: ["#f6efa6", "#d88273", "#bf444c"],
-                  aria: {
-                    decal: {
-                      decals: [
+                },
+              },
+              textStyle: {
+                fontFamily: "Raleway",
+                fontSize: 12,
+                fontStyle: "normal",
+                fontWeight: "normal",
+              },
+              stateAnimation: { duration: 300, easing: "cubicOut" },
+              animation: "auto",
+              animationDuration: 1000,
+              animationDurationUpdate: 500,
+              animationEasing: "cubicInOut",
+              animationEasingUpdate: "cubicInOut",
+              animationThreshold: 2000,
+              progressiveThreshold: 3000,
+              progressive: 400,
+              hoverLayerThreshold: 3000,
+              useUTC: false,
+              toolbox: [
+                {
+                  show: true,
+                  orient: "vertical",
+                  left: "right",
+                  top: "center",
+                  feature: {
+                    mark: { show: true },
+                    dataView: {
+                      show: true,
+                      readOnly: false,
+                      optionToContent: null,
+                      contentToOption: null,
+                      icon: "M17.5,17.3H33 M17.5,17.3H33 M45.4,29.5h-28 M11.5,2v56H51V14.8L38.4,2H11.5z M38.4,2.2v12.7H51 M45.4,41.7h-28",
+                      title: "Data View",
+                      lang: ["Data View", "Close", "Refresh"],
+                      backgroundColor: "#fff",
+                      textColor: "#000",
+                      textareaColor: "#fff",
+                      textareaBorderColor: "#333",
+                      buttonColor: "#c23531",
+                      buttonTextColor: "#fff",
+                    },
+                    restore: {
+                      show: true,
+                      icon: "M3.8,33.4 M47,18.9h9.8V8.7 M56.3,20.1 C52.1,9,40.5,0.6,26.8,2.1C12.6,3.7,1.6,16.2,2.1,30.6 M13,41.1H3.1v10.2 M3.7,39.9c4.2,11.1,15.8,19.5,29.5,18 c14.2-1.6,25.2-14.1,24.7-28.5",
+                      title: "Restore",
+                    },
+                    saveAsImage: {
+                      show: true,
+                      icon: "M4.7,22.9L29.3,45.5L54.7,23.4M4.6,43.6L4.6,58L53.8,58L53.8,43.6M29.2,45.1L29.2,0",
+                      title: "Save as Image",
+                      type: "png",
+                      connectedBackgroundColor: "#fff",
+                      name: "",
+                      excludeComponents: ["toolbox"],
+                      lang: ["Right Click to Save Image"],
+                    },
+                  },
+                  z: 6,
+                  backgroundColor: "#da3b32",
+                  borderColor: "#000",
+                  borderRadius: 20,
+                  borderWidth: 0,
+                  padding: 5,
+                  itemSize: 15,
+                  itemGap: 8,
+                  showTitle: true,
+                  iconStyle: { borderColor: "#fff", color: "none" },
+                  emphasis: { iconStyle: { borderColor: "#3E98C5" } },
+                  tooltip: { show: false, position: "bottom" },
+                  right: null,
+                  bottom: null,
+                },
+              ],
+              axisPointer: [
+                {
+                  show: "auto",
+                  z: 50,
+                  type: "line",
+                  snap: false,
+                  triggerTooltip: true,
+                  triggerEmphasis: true,
+                  value: null,
+                  status: null,
+                  link: [],
+                  animation: null,
+                  animationDurationUpdate: 200,
+                  lineStyle: { color: "#B9BEC9", width: 1, type: "dashed" },
+                  shadowStyle: { color: "rgba(210,219,238,0.2)" },
+                  label: {
+                    show: true,
+                    formatter: null,
+                    precision: "auto",
+                    margin: 3,
+                    color: "#fff",
+                    padding: [5, 7, 5, 7],
+                    backgroundColor: "auto",
+                    borderColor: null,
+                    borderWidth: 0,
+                    borderRadius: 3,
+                  },
+                  handle: {
+                    show: false,
+                    icon: "M10.7,11.9v-1.3H9.3v1.3c-4.9,0.3-8.8,4.4-8.8,9.4c0,5,3.9,9.1,8.8,9.4h1.3c4.9-0.3,8.8-4.4,8.8-9.4C19.5,16.3,15.6,12.2,10.7,11.9z M13.3,24.4H6.7v-1.2h6.6z M13.3,22H6.7v-1.2h6.6z M13.3,19.6H6.7v-1.2h6.6z",
+                    size: 45,
+                    margin: 50,
+                    color: "#333",
+                    shadowBlur: 3,
+                    shadowColor: "#aaa",
+                    shadowOffsetX: 0,
+                    shadowOffsetY: 2,
+                    throttle: 40,
+                  },
+                },
+              ],
+              tooltip: [
+                {
+                  trigger: "item",
+                  textStyle: {
+                    fontWeight: "bold",
+                    fontFamily: "Raleway",
+                    color: "#0c0c0c",
+                    fontSize: 14,
+                  },
+
+                  z: 60,
+                  show: true,
+                  showContent: true,
+                  triggerOn: "mousemove|click",
+                  alwaysShowContent: false,
+                  displayMode: "single",
+                  renderMode: "auto",
+                  confine: null,
+                  showDelay: 0,
+                  hideDelay: 100,
+                  transitionDuration: 0.4,
+                  enterable: false,
+                  backgroundColor: "#fff",
+                  shadowBlur: 10,
+                  shadowColor: "rgba(0, 0, 0, .2)",
+                  shadowOffsetX: 1,
+                  shadowOffsetY: 2,
+                  borderRadius: 4,
+                  borderWidth: 1,
+                  padding: null,
+                  extraCssText: "",
+                  axisPointer: {
+                    type: "line",
+                    axis: "auto",
+                    animation: "auto",
+                    animationDurationUpdate: 200,
+                    animationEasingUpdate: "exponentialOut",
+                    crossStyle: {
+                      color: "#999",
+                      width: 1,
+                      type: "dashed",
+                      textStyle: {},
+                    },
+                  },
+                  formatter: function (params) {
+                    // Assuming params.value contains the value you want to format
+                    const value = params.value;
+                    return `$${value.toLocaleString()}`;
+                  },
+                },
+              ],
+              series: [
+                {
+                  name: "Direct_Loss",
+                  type: "treemap",
+                  data: [
+                    {
+                      name: "B1013",
+                      value: 232920,
+                      itemStyle: { color: "rgb(0, 82, 165)" },
+                    },
+                    {
+                      name: "B1007",
+                      value: 232746,
+                      itemStyle: { color: "rgb(0, 82, 165)" },
+                    },
+                    {
+                      name: "B1001",
+                      value: 231344,
+                      itemStyle: { color: "rgb(1, 83, 166)" },
+                    },
+                    {
+                      name: "B1010",
+                      value: 229976,
+                      itemStyle: { color: "rgb(3, 84, 166)" },
+                    },
+                    {
+                      name: "B1004",
+                      value: 215944,
+                      itemStyle: { color: "rgb(16, 93, 171)" },
+                    },
+                    {
+                      name: "B1009",
+                      value: 197381,
+                      itemStyle: { color: "rgb(33, 105, 177)" },
+                    },
+                    {
+                      name: "B1003",
+                      value: 196365,
+                      itemStyle: { color: "rgb(34, 106, 178)" },
+                    },
+                    {
+                      name: "B1012",
+                      value: 195489,
+                      itemStyle: { color: "rgb(35, 107, 178)" },
+                    },
+                    {
+                      name: "B1015",
+                      value: 193237,
+                      itemStyle: { color: "rgb(37, 108, 179)" },
+                    },
+                    {
+                      name: "B1006",
+                      value: 192527,
+                      itemStyle: { color: "rgb(38, 108, 179)" },
+                    },
+                    {
+                      name: "B1014",
+                      value: 136488,
+                      itemStyle: { color: "rgb(91, 145, 199)" },
+                    },
+                    {
+                      name: "B1011",
+                      value: 136039,
+                      itemStyle: { color: "rgb(91, 145, 199)" },
+                    },
+                    {
+                      name: "B1005",
+                      value: 135999,
+                      itemStyle: { color: "rgb(91, 145, 199)" },
+                    },
+                    {
+                      name: "B1008",
+                      value: 135606,
+                      itemStyle: { color: "rgb(92, 146, 199)" },
+                    },
+                    {
+                      name: "B1002",
+                      value: 135362,
+                      itemStyle: { color: "rgb(92, 146, 199)" },
+                    },
+                    {
+                      name: "Others",
+                      value: 5435,
+                      itemStyle: { color: "rgb(214, 231, 245)" },
+                    },
+                  ],
+                  label: {
+                    show: true,
+                    formatter: "{b}",
+                    distance: 0,
+                    padding: 5,
+                    position: "inside",
+                    color: "#fff",
+                    overflow: "truncate",
+                  },
+                  itemStyle: {
+                    borderColor: "#fff",
+                    borderWidth: 1,
+                    gapWidth: 1,
+                    color: null,
+                    colorAlpha: null,
+                    colorSaturation: null,
+                    borderColorSaturation: null,
+                  },
+                  animationEasing: "elasticOut",
+                  progressive: 0,
+                  left: "center",
+                  top: "middle",
+                  width: "80%",
+                  height: "80%",
+                  sort: true,
+                  clipWindow: "origin",
+                  squareRatio: 1.618033988749895,
+                  leafDepth: null,
+                  drillDownIcon: "▶",
+                  zoomToNodeRatio: 0.1024,
+                  roam: true,
+                  nodeClick: "zoomToNode",
+                  animation: true,
+                  animationDurationUpdate: 900,
+                  breadcrumb: {
+                    show: true,
+                    height: 22,
+                    left: "center",
+                    top: "bottom",
+                    emptyItemWidth: 25,
+                    itemStyle: {
+                      color: "rgba(0,0,0,0.7)",
+                      textStyle: { color: "#fff" },
+                    },
+                    emphasis: { itemStyle: { color: "rgba(0,0,0,0.9)" } },
+                  },
+                  upperLabel: {
+                    show: false,
+                    position: [0, "50%"],
+                    height: 20,
+                    overflow: "truncate",
+                    verticalAlign: "middle",
+                  },
+                  emphasis: {
+                    upperLabel: {
+                      show: true,
+                      position: [0, "50%"],
+                      overflow: "truncate",
+                      verticalAlign: "middle",
+                    },
+                    label: { show: true },
+                  },
+                  visualDimension: 0,
+                  visualMin: null,
+                  visualMax: null,
+                  color: [],
+                  colorAlpha: null,
+                  colorSaturation: null,
+                  colorMappingBy: "index",
+                  visibleMin: 10,
+                  childrenVisibleMin: null,
+                  levels: [
+                    {
+                      color: [
+                        "#5470c6",
+                        "#91cc75",
+                        "#fac858",
+                        "#ee6666",
+                        "#73c0de",
+                        "#3ba272",
+                        "#fc8452",
+                        "#9a60b4",
+                        "#ea7ccc",
+                      ],
+                      decal: [
                         {
                           color: "rgba(0, 0, 0, 0.2)",
                           dashArrayX: [1, 0],
@@ -903,405 +1306,15 @@
                         },
                       ],
                     },
-                  },
-                  textStyle: {
-                    fontFamily: "Microsoft YaHei",
-                    fontSize: 12,
-                    fontStyle: "normal",
-                    fontWeight: "normal",
-                  },
-                  stateAnimation: { duration: 300, easing: "cubicOut" },
-                  animation: "auto",
-                  animationDuration: 1000,
-                  animationDurationUpdate: 500,
-                  animationEasing: "cubicInOut",
-                  animationEasingUpdate: "cubicInOut",
-                  animationThreshold: 2000,
-                  progressiveThreshold: 3000,
-                  progressive: 400,
-                  hoverLayerThreshold: 3000,
-                  useUTC: false,
-                  toolbox: [
-                    {
-                      show: true,
-                      orient: "vertical",
-                      left: "right",
-                      top: "center",
-                      feature: {
-                        mark: { show: true },
-                        dataView: {
-                          show: true,
-                          readOnly: false,
-                          optionToContent: null,
-                          contentToOption: null,
-                          icon: "M17.5,17.3H33 M17.5,17.3H33 M45.4,29.5h-28 M11.5,2v56H51V14.8L38.4,2H11.5z M38.4,2.2v12.7H51 M45.4,41.7h-28",
-                          title: "Data View",
-                          lang: ["Data View", "Close", "Refresh"],
-                          backgroundColor: "#fff",
-                          textColor: "#000",
-                          textareaColor: "#fff",
-                          textareaBorderColor: "#333",
-                          buttonColor: "#c23531",
-                          buttonTextColor: "#fff",
-                        },
-                        restore: {
-                          show: true,
-                          icon: "M3.8,33.4 M47,18.9h9.8V8.7 M56.3,20.1 C52.1,9,40.5,0.6,26.8,2.1C12.6,3.7,1.6,16.2,2.1,30.6 M13,41.1H3.1v10.2 M3.7,39.9c4.2,11.1,15.8,19.5,29.5,18 c14.2-1.6,25.2-14.1,24.7-28.5",
-                          title: "Restore",
-                        },
-                        saveAsImage: {
-                          show: true,
-                          icon: "M4.7,22.9L29.3,45.5L54.7,23.4M4.6,43.6L4.6,58L53.8,58L53.8,43.6M29.2,45.1L29.2,0",
-                          title: "Save as Image",
-                          type: "png",
-                          connectedBackgroundColor: "#fff",
-                          name: "",
-                          excludeComponents: ["toolbox"],
-                          lang: ["Right Click to Save Image"],
-                        },
-                      },
-                      z: 6,
-                      backgroundColor: "transparent",
-                      borderColor: "#ccc",
-                      borderRadius: 0,
-                      borderWidth: 0,
-                      padding: 5,
-                      itemSize: 15,
-                      itemGap: 8,
-                      showTitle: true,
-                      iconStyle: { borderColor: "#666", color: "none" },
-                      emphasis: { iconStyle: { borderColor: "#3E98C5" } },
-                      tooltip: { show: false, position: "bottom" },
-                      right: null,
-                      bottom: null,
-                    },
                   ],
-                  axisPointer: [
-                    {
-                      show: "auto",
-                      z: 50,
-                      type: "line",
-                      snap: false,
-                      triggerTooltip: true,
-                      triggerEmphasis: true,
-                      value: null,
-                      status: null,
-                      link: [],
-                      animation: null,
-                      animationDurationUpdate: 200,
-                      lineStyle: { color: "#B9BEC9", width: 1, type: "dashed" },
-                      shadowStyle: { color: "rgba(210,219,238,0.2)" },
-                      label: {
-                        show: true,
-                        formatter: null,
-                        precision: "auto",
-                        margin: 3,
-                        color: "#fff",
-                        padding: [5, 7, 5, 7],
-                        backgroundColor: "auto",
-                        borderColor: null,
-                        borderWidth: 0,
-                        borderRadius: 3,
-                      },
-                      handle: {
-                        show: false,
-                        icon: "M10.7,11.9v-1.3H9.3v1.3c-4.9,0.3-8.8,4.4-8.8,9.4c0,5,3.9,9.1,8.8,9.4h1.3c4.9-0.3,8.8-4.4,8.8-9.4C19.5,16.3,15.6,12.2,10.7,11.9z M13.3,24.4H6.7v-1.2h6.6z M13.3,22H6.7v-1.2h6.6z M13.3,19.6H6.7v-1.2h6.6z",
-                        size: 45,
-                        margin: 50,
-                        color: "#333",
-                        shadowBlur: 3,
-                        shadowColor: "#aaa",
-                        shadowOffsetX: 0,
-                        shadowOffsetY: 2,
-                        throttle: 40,
-                      },
-                    },
-                  ],
-                  tooltip: [
-                    {
-                      trigger: "item",
-                      textStyle: {
-                        fontWeight: "bold",
-                        fontFamily: "Raleway",
-                        color: "#0c0c0c",
-                        fontSize: 14,
-                      },
-
-                      z: 60,
-                      show: true,
-                      showContent: true,
-                      triggerOn: "mousemove|click",
-                      alwaysShowContent: false,
-                      displayMode: "single",
-                      renderMode: "auto",
-                      confine: null,
-                      showDelay: 0,
-                      hideDelay: 100,
-                      transitionDuration: 0.4,
-                      enterable: false,
-                      backgroundColor: "#fff",
-                      shadowBlur: 10,
-                      shadowColor: "rgba(0, 0, 0, .2)",
-                      shadowOffsetX: 1,
-                      shadowOffsetY: 2,
-                      borderRadius: 4,
-                      borderWidth: 1,
-                      padding: null,
-                      extraCssText: "",
-                      axisPointer: {
-                        type: "line",
-                        axis: "auto",
-                        animation: "auto",
-                        animationDurationUpdate: 200,
-                        animationEasingUpdate: "exponentialOut",
-                        crossStyle: {
-                          color: "#999",
-                          width: 1,
-                          type: "dashed",
-                          textStyle: {},
-                        },
-                      },
-                      formatter: function (params) {
-                        // Assuming params.value contains the value you want to format
-                        const value = params.value;
-                        return `$${value.toLocaleString()}`;
-                      },
-                    },
-                  ],
-                  series: [
-                    {
-                      name: "Direct_Loss",
-                      type: "treemap",
-                      data: [
-                        {
-                          name: "B1013",
-                          value: 232920,
-                          itemStyle: { color: "rgb(0, 82, 165)" },
-                        },
-                        {
-                          name: "B1007",
-                          value: 232746,
-                          itemStyle: { color: "rgb(0, 82, 165)" },
-                        },
-                        {
-                          name: "B1001",
-                          value: 231344,
-                          itemStyle: { color: "rgb(1, 83, 166)" },
-                        },
-                        {
-                          name: "B1010",
-                          value: 229976,
-                          itemStyle: { color: "rgb(3, 84, 166)" },
-                        },
-                        {
-                          name: "B1004",
-                          value: 215944,
-                          itemStyle: { color: "rgb(16, 93, 171)" },
-                        },
-                        {
-                          name: "B1009",
-                          value: 197381,
-                          itemStyle: { color: "rgb(33, 105, 177)" },
-                        },
-                        {
-                          name: "B1003",
-                          value: 196365,
-                          itemStyle: { color: "rgb(34, 106, 178)" },
-                        },
-                        {
-                          name: "B1012",
-                          value: 195489,
-                          itemStyle: { color: "rgb(35, 107, 178)" },
-                        },
-                        {
-                          name: "B1015",
-                          value: 193237,
-                          itemStyle: { color: "rgb(37, 108, 179)" },
-                        },
-                        {
-                          name: "B1006",
-                          value: 192527,
-                          itemStyle: { color: "rgb(38, 108, 179)" },
-                        },
-                        {
-                          name: "B1014",
-                          value: 136488,
-                          itemStyle: { color: "rgb(91, 145, 199)" },
-                        },
-                        {
-                          name: "B1011",
-                          value: 136039,
-                          itemStyle: { color: "rgb(91, 145, 199)" },
-                        },
-                        {
-                          name: "B1005",
-                          value: 135999,
-                          itemStyle: { color: "rgb(91, 145, 199)" },
-                        },
-                        {
-                          name: "B1008",
-                          value: 135606,
-                          itemStyle: { color: "rgb(92, 146, 199)" },
-                        },
-                        {
-                          name: "B1002",
-                          value: 135362,
-                          itemStyle: { color: "rgb(92, 146, 199)" },
-                        },
-                        {
-                          name: "Others",
-                          value: 5435,
-                          itemStyle: { color: "rgb(214, 231, 245)" },
-                        },
-                      ],
-                      label: {
-                        show: true,
-                        formatter: "{b}",
-                        distance: 0,
-                        padding: 5,
-                        position: "inside",
-                        color: "#fff",
-                        overflow: "truncate",
-                      },
-                      itemStyle: {
-                        borderColor: "#fff",
-                        borderWidth: 1,
-                        gapWidth: 1,
-                        color: null,
-                        colorAlpha: null,
-                        colorSaturation: null,
-                        borderColorSaturation: null,
-                      },
-                      animationEasing: "elasticOut",
-                      progressive: 0,
-                      left: "center",
-                      top: "middle",
-                      width: "80%",
-                      height: "80%",
-                      sort: true,
-                      clipWindow: "origin",
-                      squareRatio: 1.618033988749895,
-                      leafDepth: null,
-                      drillDownIcon: "▶",
-                      zoomToNodeRatio: 0.1024,
-                      roam: true,
-                      nodeClick: "zoomToNode",
-                      animation: true,
-                      animationDurationUpdate: 900,
-                      breadcrumb: {
-                        show: true,
-                        height: 22,
-                        left: "center",
-                        top: "bottom",
-                        emptyItemWidth: 25,
-                        itemStyle: {
-                          color: "rgba(0,0,0,0.7)",
-                          textStyle: { color: "#fff" },
-                        },
-                        emphasis: { itemStyle: { color: "rgba(0,0,0,0.9)" } },
-                      },
-                      upperLabel: {
-                        show: false,
-                        position: [0, "50%"],
-                        height: 20,
-                        overflow: "truncate",
-                        verticalAlign: "middle",
-                      },
-                      emphasis: {
-                        upperLabel: {
-                          show: true,
-                          position: [0, "50%"],
-                          overflow: "truncate",
-                          verticalAlign: "middle",
-                        },
-                        label: { show: true },
-                      },
-                      visualDimension: 0,
-                      visualMin: null,
-                      visualMax: null,
-                      color: [],
-                      colorAlpha: null,
-                      colorSaturation: null,
-                      colorMappingBy: "index",
-                      visibleMin: 10,
-                      childrenVisibleMin: null,
-                      levels: [
-                        {
-                          color: [
-                            "#5470c6",
-                            "#91cc75",
-                            "#fac858",
-                            "#ee6666",
-                            "#73c0de",
-                            "#3ba272",
-                            "#fc8452",
-                            "#9a60b4",
-                            "#ea7ccc",
-                          ],
-                          decal: [
-                            {
-                              color: "rgba(0, 0, 0, 0.2)",
-                              dashArrayX: [1, 0],
-                              dashArrayY: [2, 5],
-                              symbolSize: 1,
-                              rotation: 0.5235987755982988,
-                            },
-                            {
-                              color: "rgba(0, 0, 0, 0.2)",
-                              symbol: "circle",
-                              dashArrayX: [
-                                [8, 8],
-                                [0, 8, 8, 0],
-                              ],
-                              dashArrayY: [6, 0],
-                              symbolSize: 0.8,
-                            },
-                            {
-                              color: "rgba(0, 0, 0, 0.2)",
-                              dashArrayX: [1, 0],
-                              dashArrayY: [4, 3],
-                              rotation: -0.7853981633974483,
-                            },
-                            {
-                              color: "rgba(0, 0, 0, 0.2)",
-                              dashArrayX: [
-                                [6, 6],
-                                [0, 6, 6, 0],
-                              ],
-                              dashArrayY: [6, 0],
-                            },
-                            {
-                              color: "rgba(0, 0, 0, 0.2)",
-                              dashArrayX: [
-                                [1, 0],
-                                [1, 6],
-                              ],
-                              dashArrayY: [1, 0, 6, 0],
-                              rotation: 0.7853981633974483,
-                            },
-                            {
-                              color: "rgba(0, 0, 0, 0.2)",
-                              symbol: "triangle",
-                              dashArrayX: [
-                                [9, 9],
-                                [0, 9, 9, 0],
-                              ],
-                              dashArrayY: [7, 2],
-                              symbolSize: 0.75,
-                            },
-                          ],
-                        },
-                      ],
-                    },
-                  ],
-                  visualMap: [],
-                  legend: [],
-                  dataZoom: [],
-                };
-                chart.setOption(option);
-              </script>
-            </div>
-          </div>
+                },
+              ],
+              visualMap: [],
+              legend: [],
+              dataZoom: [],
+            };
+            chart.setOption(option);
+          </script>
         </div>
       </div>
     </section>
@@ -1320,6 +1333,10 @@
             >
               Key Disruption Scenario
             </h3>
+            <div style="color: #0c1448;">
+              <span uk-icon="info" style="margin-right: 5px;"></span>
+              <span class="">Average damage map of portfolio</span>
+            </div>
             <p class="uk-margin-small-top">
               The biggest cause of functional disruption is flooded roads,
               regardless of the level of property damage. In extreme scenarios,
@@ -1343,7 +1360,19 @@
             >
               Average Post Event Functional Recovery
             </h3>
-            <div id="chartRecov" style="width: 100%; height: 20rem"></div>
+            <div style="color: #0c1448;">
+              <span uk-icon="info" style="margin-right: 5px;"></span>
+              <span>Average/scenario post-event recovery trajectory of functions</span>
+            </div>
+            <h4 style="font-weight: 700">
+            <img
+              src="https://ik.imagekit.io/vv8l41ztu/Pluvial.svg"
+              alt="Shaking Icon"
+              style="height: 20px; vertical-align: middle"
+            />
+            Pluvial
+          </h4>
+            <div id="chartRecov" style="width: 100%; height: 20rem" class="uk-margin-small-top"></div>
             <script>
               var chart = echarts.init(document.getElementById("chartRecov"));
               var option = {
@@ -1418,7 +1447,7 @@
                   },
                 },
                 textStyle: {
-                  fontFamily: "Microsoft YaHei",
+                  fontFamily: "Raleway",
                   fontSize: 12,
                   fontStyle: "normal",
                   fontWeight: "normal",
@@ -1474,15 +1503,15 @@
                       },
                     },
                     z: 6,
-                    backgroundColor: "transparent",
-                    borderColor: "#ccc",
-                    borderRadius: 0,
+                    backgroundColor: "#da3b32",
+                    borderColor: "#000",
+                    borderRadius: 20,
                     borderWidth: 0,
                     padding: 5,
                     itemSize: 15,
                     itemGap: 8,
                     showTitle: true,
-                    iconStyle: { borderColor: "#666", color: "none" },
+                    iconStyle: { borderColor: "#fff", color: "none" },
                     emphasis: { iconStyle: { borderColor: "#3E98C5" } },
                     tooltip: { show: false, position: "bottom" },
                     right: null,
